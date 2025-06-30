@@ -1,0 +1,217 @@
+from pathlib import Path
+
+# Define the directory and the content of style.css
+style_content = """
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 35px;
+  margin-right: 0.75em;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+.nav-right a {
+  margin-left: 1.5em;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+  background-image: url("images/jigjiga.webp");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 3em;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
+  color: #1e3a8a;
+}
+
+/* SEARCH BAR */
+.search-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 0.7em 1.2em;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  width: 60%;
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 0.7em 1.5em;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CATEGORY FILTERS */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  padding: 0.5em 1.2em;
+  background-color: white;
+  border: 1px solid #1e3a8a;
+  color: #1e3a8a;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+/* LISTINGS GRID */
+#listing-container {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+
+.listing {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.listing:hover {
+  transform: translateY(-5px);
+}
+
+.listing img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.listing .content {
+  padding: 1em;
+}
+
+.listing h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+}
+
+.listing p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.listing strong {
+  display: block;
+  margin-top: 0.5em;
+  font-weight: bold;
+  color: #111827;
+}
+
+.listing a {
+  margin-top: 0.7em;
+  display: inline-block;
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    margin-top: 1em;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+}
+"""
+
+# Save the CSS content to style.css in a downloadable path
+css_path = Path("/mnt/data/style.css")
+css_path.write_text(style_content)
+
+css_path.name  # Return just the filename for the user to download
+

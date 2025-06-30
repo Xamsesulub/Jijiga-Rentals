@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels - Xamse Rentals</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="Script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <span class="brand">Xamse Rentals</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="overlay">
+      <h1>Available Hotels</h1>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for houses or hotels...">
+        <button onclick="search()">Search</button>
+      </div>
+      <div id="listing-container" class="listing-wrapper"></div>
+    </section>
+  </main>
+
+  <script>
+    const hotelListings = listings.filter(item => item.title.toLowerCase().includes("hotel"));
+    displayListings(hotelListings);
+  </script>
+</body>
+</html>

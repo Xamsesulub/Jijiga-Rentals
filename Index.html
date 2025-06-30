@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xamse Rentals</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="Script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <span class="brand">Xamse Rentals</span>
+    </div>
+    <div class="nav-right">
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="overlay">
+        <h1>Find a place to stay in Jijiga</h1>
+        
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search for houses or hotels...">
+          <button onclick="search()">Search</button>
+        </div>
+
+        <div class="filters">
+          <a href="houses.html" class="category-button">🏠 House</a>
+          <a href="apartments.html" class="category-button">🏢 Apartment</a>
+          <a href="rooms.html" class="category-button">🛏️ Room</a>
+          <a href="hotels.html" class="category-button">🏨 Hotel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="listing-container" class="listing-wrapper"></section>
+  </main>
+</body>
+</html>
