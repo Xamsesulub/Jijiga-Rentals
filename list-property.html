@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>List Your Property - Xamse Rentals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <span class="brand">Xamse Rentals</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+  </div>
+</header>
+
+<main>
+  <form class="auth-form" action="#" method="POST">
+    <h2>List a New Property</h2>
+
+    <label for="title">Property Title</label>
+    <input type="text" id="title" name="title" required />
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" required />
+
+    <label for="price">Monthly Rent (kr)</label>
+    <input type="number" id="price" name="price" required />
+
+    <label for="image">Image URL (optional)</label>
+    <input type="url" id="image" name="image" />
+
+    <button type="submit">Publish Property</button>
+  </form>
+</main>
+</body>
+</html>

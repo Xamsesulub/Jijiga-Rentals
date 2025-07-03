@@ -215,3 +215,124 @@ css_path.write_text(style_content)
 
 css_path.name  # Return just the filename for the user to download
 
+
+                 # Add to the existing style.css content
+                 auth_styles = """
+/* AUTH FORMS */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  padding: 2em;
+  background-color: #f1f5f9;
+}
+
+.auth-form {
+  background-color: white;
+  padding: 2.5em;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+  margin: 2em 0;
+}
+
+.auth-form h2 {
+  color: #1e3a8a;
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: #374151;
+  font-weight: 500;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.9em;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #1a3a8a;
+}
+
+.auth-form p {
+  text-align: center;
+  margin-top: 1.5em;
+  color: #4b5563;
+}
+
+.auth-form a {
+  color: #1e3a8a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+/* FORM VALIDATION MESSAGES */
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+.success-message {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 1.5em;
+  }
+
+  .auth-form h2 {
+    font-size: 1.5rem;
+  }
+}
+"""
+
+# Combine with existing CSS
+  combined_css = style_content + auth_styles
+
+# Save the updated CSS
+                 updated_css_path = Path("/mnt/data/style.css")
+updated_css_path.write_text(combined_css)
+
+updated_css_path.name
